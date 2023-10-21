@@ -17,3 +17,12 @@ I haven't checked the function list, but can a reload to another
 
 The `agon-vdp` extra modes and things is better to build on anyhow.
 
+## Best Informative Finds So Far
+
+ * The MOS extension 32kB loading from `$B0000` of `.bin` files in
+ the `mos` directory without needing the `.bin` extension. This is
+ an alternate load transient "reserved" area just below the global heap
+ and stack area.
+ * File format magic number starting at byte `$40` is `MOS`, `<version byte>`,
+ `<adl mode bool byte>`. So for a `$40000` load, it starts at `$40040`. 
+
