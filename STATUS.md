@@ -32,4 +32,5 @@ The `agon-vdp` extra modes and things is better to build on anyhow.
  `$A0000` loading, as it might need a temp save, set `sp`, fix splat,
  do stuff, put stack back, `ret.lis`. It would likely be with some recusion
  and an almost at the limit 16 bit binary, assuming a high memory stack.
+ Check splat in `mos.c` function `mos_cmdRUN` before `exec16`?
 
