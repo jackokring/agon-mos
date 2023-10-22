@@ -33,4 +33,6 @@ The `agon-vdp` extra modes and things is better to build on anyhow.
  do stuff, put stack back, `ret.lis`. It would likely be with some recusion
  and an almost at the limit 16 bit binary, assuming a high memory stack.
  Check splat in `mos.c` function `mos_cmdRUN` before `exec16`?
+ **FIX** Perhaps a `ld.sis sp, 0` or `ld.sis sp, $8000` before the `CALL.IS (DE): RET`
+ based on the `A` segment being `$0B` to prevent global `SPL` clobber?
 
