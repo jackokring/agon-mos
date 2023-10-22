@@ -24,5 +24,12 @@ The `agon-vdp` extra modes and things is better to build on anyhow.
  an alternate load transient "reserved" area just below the global heap
  and stack area.
  * File format magic number starting at byte `$40` is `MOS`, `<version byte>`,
- `<adl mode bool byte>`. So for a `$40000` load, it starts at `$40040`. 
+ `<adl mode bool byte>`. So for a `$40000` load, it starts at `$40040`.
+ This does limit the use of `rst $38` and `im 1`. But seen vector table.
+ A `jr 5` perhaps for extended magic? 
+ * **N.B.** Is there a stack splat in `misc.asm` within `_exec16` by not setting `sp`
+ to some value before `call.is`? Not for `$B0000` loading, but for say
+ `$A0000` loading, as it might need a temp save, set `sp`, fix splat,
+ do stuff, put stack back, `ret.lis`. It would likely be with some recusion
+ and an almost at the limit 16 bit binary, assuming a high memory stack.
 
